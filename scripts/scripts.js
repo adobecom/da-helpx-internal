@@ -101,6 +101,16 @@ const { loadArea, setConfig } = await import(`${miloLibs}/utils/utils.js`);
   decorateIcons();
 }());
 
+(async function daPreview() {
+  const { searchParams } = new URL(window.location.href);
+  const daPreview = searchParams.get('dapreview');
+  if (daPreview) {
+    const origin = daPreview === 'local' ? 'http://localhost:3000' : 'https://da.live';
+    const { default: livePreview } = await import(`${origin}/scripts/dapreview.js`);
+    livePreview(loadPage);
+  }
+}());
+
 export const setTop = (block, extra = 0) => {
   const title = document.querySelector('.page-title');
   block.style.top = `${(title?.offsetHeight ?? 0) + getHeaderMarginTop() + extra}px`;
