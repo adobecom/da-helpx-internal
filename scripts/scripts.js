@@ -95,11 +95,12 @@ const miloLibs = setLibs(LIBS);
 
 const { loadArea, setConfig } = await import(`${miloLibs}/utils/utils.js`);
 
-(async function loadPage() {
+function loadPage() {
   setConfig({ ...CONFIG, miloLibs });
   await loadArea();
   decorateIcons();
-}());
+}
+loadPage();
 
 (async function daPreview() {
   const { searchParams } = new URL(window.location.href);
