@@ -1,2 +1,4 @@
 mountpoints:
-  /: https://adobe.sharepoint.com/:f:/r/sites/adobecom/Shared%20Documents/helpx-internal
+  /:
+    url: https://content.da.live/adobecom/da-helpx-internal/
+    type: markup
