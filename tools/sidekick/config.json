@@ -1,6 +1,7 @@
 {
   "project": "HelpX Internal",
   "host": "helpx-internal.adobe.com",
+  "trustedHosts": ["milo.adobe.com"],
   "plugins": [
     {
       "id": "tools",
